@@ -19,6 +19,8 @@ https://web.archive.org/web/20201122182331/https://www.thegatewaypundit.com/2020
 
 Truman Black posted in this Blog:
 
+https://thedonald.win/p/11Q8O2wesk/happening-calling-every-pede-to-/
+
 https://web.archive.org/web/20201110203334/https://thedonald.win/p/11Q8O2wesk/happening-calling-every-pede-to-/
 
 His work outlines many irregularities across many states.  
@@ -29,7 +31,7 @@ https://web.archive.org/web/20201115071545/https://www.thegatewaypundit.com/2020
 
 Truman found NYT data on elections that could be used for his analysis, he saved his specific data to an RAR file so as to prevent future changes to the dataset
 
-https://workupload.com/file/s7s8SARjjqh
+https://workupload.com/file/aTKhxPg2RTr
 
 Truman created a python  script to review the data, unfortunately couldnt find a way to archive so I will be storing this script within this repository.
 
