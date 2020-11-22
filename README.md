@@ -1,4 +1,4 @@
-# replicating_results_of_sarah_eaglesfield_and_truman_black
+# Replicating Results of Sarah Eaglesfield and Truman Black
 This repository's purpose is to store detail on discrepancies noted by Sarah Eaglesfield and Truman Black, as well as attempting to replicate their results
 
 To prevent the removal/disappearance of data over time, all links have been saved to archive.org.  When replicating results please be cognizant of snapshot date, I will provide the snapshot dates I use such that results may be replicated apples-to-apples.
