@@ -15,6 +15,10 @@ Her work was featured in this gateway pundit article:
 
 https://web.archive.org/web/20201122182331/https://www.thegatewaypundit.com/2020/11/breaking-report-largest-number-cluster-votes-wayne-co-mi-came-psychiatric-hospital-patients-severe-mental-illnesses/
 
+#### Sarah's Claim
+
+Sarah was primarily interested in investigating cluster oddities.  
+
 ### Truman Black
 
 Truman Black posted in this Blog:
@@ -36,3 +40,7 @@ https://workupload.com/file/aTKhxPg2RTr
 Truman created a python  script to review the data, unfortunately couldnt find a way to archive so I will be storing this script within this repository.
 
 https://workupload.com/start/DV4TvqtWEK8
+
+#### Truman's Claim
+
+Truman's claim is that votes are being switched, across the country.  This is consistent with the oddity witnessed on the night of the election, where votes seemed to disappear from Trump in the CNN live vote count feed.
