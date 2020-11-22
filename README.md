@@ -21,7 +21,7 @@ Truman Black posted in this Blog:
 
 https://thedonald.win/p/11Q8O2wesk/happening-calling-every-pede-to-/
 
-https://web.archive.org/web/20201110203334/https://thedonald.win/p/11Q8O2wesk/happening-calling-every-pede-to-/
+https://web.archive.org/web/20201122021514/https://thedonald.win/p/11Q8O2wesk/happening-calling-every-pede-to-/
 
 His work outlines many irregularities across many states.  
 
