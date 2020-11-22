@@ -53,7 +53,7 @@ Truman's claim is that votes are being switched, across the country.  This is co
 
 Both Sarah and Truman used the NYT edison records.
 
-These records showed to still be available to the public on 11/22/2020, but I don't trust that the data will always be available, thus I am saving links to data via archive.org
+These records showed to still be available to the public on 11/22/2020, but I don't trust that the data will always be available, thus I am saving links to data via archive.org for those states which are most pertinent.
 
 PENNSYLVANIA DATA
 https://web.archive.org/web/20201122180531/https://static01.nyt.com/elections-assets/2020/data/api/2020-11-03/race-page/pennsylvania/president.json
