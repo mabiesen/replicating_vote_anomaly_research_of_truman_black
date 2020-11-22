@@ -3,6 +3,10 @@ This repository's purpose is to store detail on discrepancies noted by Sarah Eag
 
 To prevent the removal/disappearance of data over time, all links have been saved to archive.org.  When replicating results please be cognizant of snapshot date, I will provide the snapshot dates I use such that results may be replicated apples-to-apples.
 
+This repository has also been saved to archive.org
+
+https://web.archive.org/web/20201122213953/https://github.com/mabiesen/replicating_results_of_sarah_eaglesfield_and_truman_black
+
 ## BACKGROUND - What is being claimed?
 
 ### Sarah Eaglesfield
