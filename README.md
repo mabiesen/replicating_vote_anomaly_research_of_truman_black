@@ -37,7 +37,7 @@ Truman had seen the following gateway pundit article which sparked him to dig in
 
 https://web.archive.org/web/20201115071545/https://www.thegatewaypundit.com/2020/11/breaking-huge-another-system-glitch-captured-live-cnn-election-night-20000-votes-swapped-trump-biden-video/
 
-Truman found NYT data on elections that could be used for his analysis, he saved his specific data to an RAR file so as to prevent future changes to the dataset
+Truman found NYT data on elections that could be used for his analysis, he saved his specific data to an RAR file so as to prevent future changes to the dataset.  Unfortunately, the rar file is password protected
 
 https://workupload.com/file/aTKhxPg2RTr
 
