@@ -19,9 +19,13 @@ Her work was featured in this gateway pundit article:
 
 https://web.archive.org/web/20201122182331/https://www.thegatewaypundit.com/2020/11/breaking-report-largest-number-cluster-votes-wayne-co-mi-came-psychiatric-hospital-patients-severe-mental-illnesses/
 
+Sarah's work is summarized in this paper
+
+https://web.archive.org/web/20201122220524/https://electint.s3.eu-west-2.amazonaws.com/Wayne+County+Report.pdf
+
 #### Sarah's Claim
 
-Sarah was primarily interested in investigating cluster oddities.  
+Sarah was primarily interested in investigating cluster oddities in Wayne County Michigan.  
 
 ### Truman Black
 
