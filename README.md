@@ -44,3 +44,27 @@ https://workupload.com/start/DV4TvqtWEK8
 #### Truman's Claim
 
 Truman's claim is that votes are being switched, across the country.  This is consistent with the oddity witnessed on the night of the election, where votes seemed to disappear from Trump in the CNN live vote count feed.
+
+## RESOURCES - DATA
+
+Both Sarah and Truman used the NYT edison records.
+
+These records showed to still be available to the public on 11/22/2020, but I don't trust that the data will always be available, thus I am saving links to data via archive.org
+
+PENNSYLVANIA DATA
+https://web.archive.org/web/20201122180531/https://static01.nyt.com/elections-assets/2020/data/api/2020-11-03/race-page/pennsylvania/president.json
+
+GEORGIA DATA
+https://web.archive.org/web/20201122051408/https://static01.nyt.com/elections-assets/2020/data/api/2020-11-03/race-page/georgia/president.json
+
+MICHIGAN DATA
+https://web.archive.org/web/20201121170943/https://static01.nyt.com/elections-assets/2020/data/api/2020-11-03/race-page/michigan/president.json
+
+OHIO DATA
+https://web.archive.org/web/20201121181421/https://static01.nyt.com/elections-assets/2020/data/api/2020-11-03/race-page/ohio/president.json
+
+WISCONSIN DATA
+https://web.archive.org/web/20201121173813/https://static01.nyt.com/elections-assets/2020/data/api/2020-11-03/race-page/wisconsin/president.json
+
+NEVADA DATA
+https://web.archive.org/web/20201121172106/https://static01.nyt.com/elections-assets/2020/data/api/2020-11-03/race-page/nevada/president.json
