@@ -6,42 +6,74 @@ class StateEdisonData
   
   def initialize(filepath)
     @state_name = File.basename(filepath, '.*').upcase
-    puts "EVALUATING #{@state_name}"
-    puts ""
     state_json_data(filepath)
   end
 
   def state_json_data(filepath)
-    @state_json_data ||= JSON.parse(File.read(filepath))
+    return @state_json_data unless @state_json_data.nil? 
+
+    json_data = JSON.parse(File.read(filepath))
+    @state_json_data = convert_time_series_timestamp_to_datetime(json_data)
   end
 
-  def time_series_data_from_json_data(json_data)
-    json_data["data"]["races"][0]["timeseries"]
+  def convert_time_series_timestamp_to_datetime(json_data)
+    timeseries_data = json_data["data"]["races"][0]["timeseries"]
+    date_and_time = '%Y-%m-%dT%H:%M:%S'
+    new_timeseries = timeseries_data.map do |tsdata|
+                       tsdata['timestamp'] = DateTime.strptime(tsdata['timestamp'], date_and_time)
+                       tsdata
+                     end
+    new_timeseries = new_timeseries.sort_by do |tsdata|
+                       tsdata['timestamp']
+                     end
+    json_data["data"]["races"][0]["timeseries"] = new_timeseries
+    json_data
   end
 
-  def print_times_where_total_vote_count_dropped(timeseries_array)
-    timeseries_array.each_with_index do |tsdata, index|
+  def time_series_data
+    @state_json_data["data"]["races"][0]["timeseries"]
+  end
+
+  def print_report()
+    puts "EVALUATING #{@state_name}"
+    puts ""
+
+    puts "Printing times where the lead switched"
+    print_times_where_lead_switched
+
+    puts "Printing times where the total vote count dropped"
+    print_times_where_total_vote_count_dropped
+
+    puts "Printing times where Trumps total dropped"
+    print_times_where_candidates_personal_total_dropped('Trump')
+
+    puts "Printing times where Bidens total dropped"
+    print_times_where_candidates_personal_total_dropped('Biden')
+  end
+
+  def print_times_where_total_vote_count_dropped
+    time_series_data.each_with_index do |tsdata, index|
       next if index == 0
 
       current_votes = tsdata['votes']
       current_timestamp = tsdata['timestamp']
-      last_votes = timeseries_array[index - 1]['votes']
-      last_timestamp = timeseries_array[index - 1]['timestamp']
-      if tsdata['votes'] < timeseries_array[index - 1]['votes']
+      last_votes = time_series_data[index - 1]['votes']
+      last_timestamp = time_series_data[index - 1]['timestamp']
+      if tsdata['votes'] < time_series_data[index - 1]['votes']
         puts "total count dropped by #{current_votes - last_votes} between #{last_timestamp} and #{current_timestamp}"
       end
     end
     puts "\n\n"
   end
 
-  def print_times_where_lead_switched(timeseries_array)
-    timeseries_array.each_with_index do |tsdata, index|
+  def print_times_where_lead_switched
+    time_series_data.each_with_index do |tsdata, index|
       next if index == 0
       
       trump_key = 'trumpd'
       biden_key = 'bidenj'
       current_lead = tsdata['vote_shares'][trump_key] > tsdata['vote_shares'][biden_key] ? 'Trump' : 'Biden' 
-      last_tsdata  = timeseries_array[index - 1]
+      last_tsdata  = time_series_data[index - 1]
       last_lead = last_tsdata['vote_shares'][trump_key] > last_tsdata['vote_shares'][biden_key] ? 'Trump' : 'Biden'
 
       if last_lead != current_lead
@@ -50,12 +82,28 @@ class StateEdisonData
     end
     puts "\n\n"
   end
+
+  def print_times_where_candidates_personal_total_dropped(candidate)
+    candidate_key = candidate.downcase == 'trump' ? 'trumpd' : 'bidenj' 
+
+    time_series_data.each_with_index do |tsdata, index|
+      next if index == 0
+      last_tsdata  = time_series_data[index - 1]
+      last_total = last_tsdata['vote_shares'][candidate_key] * last_tsdata['votes']
+      current_total =  tsdata['vote_shares'][candidate_key] * tsdata['votes']
+
+      if last_total > current_total
+        puts "AT #{tsdata['timestamp']}, #{candidate}'s total dropped by #{current_total - last_total}"
+      end
+    end
+    puts "\n\n"
+  end
 end
 
-def convert_timestamp_to_datetime(timestamp)
-  date_and_time = '%Y-%m-%dT%H:%M:%S'
-  DateTime.strptime(timestamp ,date_and_time)
-end
+#def convert_timestamp_to_datetime(timestamp)
+#  date_and_time = '%Y-%m-%dT%H:%M:%S'
+#  DateTime.strptime(timestamp ,date_and_time)
+#end
 
 
 puts "Please supply the filepath for the state you wish to examine"
@@ -63,24 +111,31 @@ state_filepath = gets.chomp
 
 # instantiate edidson state data class
 sed = StateEdisonData.new(state_filepath) 
+sed.print_report
 
 # getting the data
-json_data = sed.state_json_data(state_filepath)
-timeseries_data = sed.time_series_data_from_json_data(json_data)
+#json_data = sed.state_json_data(state_filepath)
+#timeseries_data = sed.time_series_data_from_json_data(json_data)
 
 # converting timestamps to insure proper sort
-timeseries_data = timeseries_data.map do |tsdata|
-                    tsdata['timestamp'] = convert_timestamp_to_datetime(tsdata['timestamp'])
-                    tsdata
-                  end
+#timeseries_data = timeseries_data.map do |tsdata|
+#                    tsdata['timestamp'] = convert_timestamp_to_datetime(tsdata['timestamp'])
+#                    tsdata
+#                  end
 
 # sort data by timestamp
-timeseries_data = timeseries_data.sort_by do |tsdata|
-                    tsdata['timestamp']
-                  end
+#timeseries_data = timeseries_data.sort_by do |tsdata|
+#                    tsdata['timestamp']
+#                  end
 
-puts "Printing times where the total vote count dropped"
-sed.print_times_where_total_vote_count_dropped(timeseries_data)
+#puts "Printing times where the total vote count dropped"
+#sed.print_times_where_total_vote_count_dropped(timeseries_data)
 
-puts "Printing times where the lead switched"
-sed.print_times_where_lead_switched(timeseries_data)
+#puts "Printing times where the lead switched"
+#sed.print_times_where_lead_switched(timeseries_data)
+
+#puts "Printing times where Trumps total dropped"
+#sed.print_times_where_candidates_personal_total_dropped(timeseries_data, 'Trump')
+
+#puts "Printing times where Bidens total dropped"
+#sed.print_times_where_candidates_personal_total_dropped(timeseries_data, 'Biden')
