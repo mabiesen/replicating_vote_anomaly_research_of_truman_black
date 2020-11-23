@@ -59,6 +59,10 @@ require './united_states_edison_data'
 ```
 us_edison_data = UnitedStatesEdisonData.new('/some/path/to/a/directory/')
 ```
+OR, leave the argument blank in order to obtain fresh data from NYT
+```
+us_edison_data = UnitedStatesEdisonData.new
+```
 
 Now, you should be able to access all of the methods provided by United States Edison Data, these include:
 * **state_edison_data(\<state_name\>)** - get the StateEdisonData for a given state.  Good for drilling into the particulars of a given state
