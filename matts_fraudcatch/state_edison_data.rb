@@ -114,6 +114,22 @@ class StateEdisonData
     sum
   end
 
+  def vote_drop_timeseries_data
+    vote_drops = []
+    time_series_data.each_with_index do |tsdata, index|
+      next if index == 0
+
+      current_votes = tsdata['votes']
+      current_timestamp = tsdata['timestamp']
+      last_votes = time_series_data[index - 1]['votes']
+      last_timestamp = time_series_data[index - 1]['timestamp']
+      if tsdata['votes'] < time_series_data[index - 1]['votes']
+        vote_drops.push(tsdata)
+      end
+    end
+    vote_drops
+  end
+
   def print_times_where_total_vote_count_dropped
     time_series_data.each_with_index do |tsdata, index|
       next if index == 0

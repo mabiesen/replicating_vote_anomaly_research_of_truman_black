@@ -39,9 +39,16 @@ class UnitedStatesEdisonData
       puts "State: #{state.state_name}, Biden total drop: #{state.biden_total_drop}"
     end
   end
+
+  def print_most_common_day_for_vote_drops_in_state
+    @all_states_edison_data.each do |state|
+      date_count = Hash.new(0)
+      tsdata = state.vote_drop_timeseries_data
+      dates = tsdata.map{|data| data['timestamp'].to_date}
+      dates.each {|date| date_count[date] += 1}
+      most_common_date = date_count.sort_by { |date,number| number}.last[0]
+      puts "State #{state.state_name} most commonly dropped votes on #{most_common_date}"
+    end
+  end
 end
-
-#puts "Please provide the directory where state json is located"
-#states_dir = gets.chomp
-
 
