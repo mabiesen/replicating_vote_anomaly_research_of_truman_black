@@ -1,5 +1,5 @@
-# Replicating Results of Sarah Eaglesfield and Truman Black
-This repository's purpose is to store detail on discrepancies noted by Sarah Eaglesfield and Truman Black, as well as attempting to replicate their results
+# Replicating Results of Truman Black
+This repository's purpose is to store detail on discrepancies noted by Truman Black, as well as attempting to replicate his results
 
 To prevent the removal/disappearance of data over time, all links have been saved to archive.org.  When replicating results please be cognizant of snapshot date, I will provide the snapshot dates I use such that results may be replicated apples-to-apples.
 
@@ -8,24 +8,6 @@ This repository has also been saved to archive.org
 https://web.archive.org/web/20201122213953/https://github.com/mabiesen/replicating_results_of_sarah_eaglesfield_and_truman_black
 
 ## BACKGROUND - What is being claimed?
-
-### Sarah Eaglesfield
-
-Sarah Eaglesfield exposed her work via the following twitter link,  her work indicated several irregularities with Wayne County Michigan (detroit)
-
-https://web.archive.org/web/20201122202050/https://twitter.com/zenxv/status/1330556830431522817?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet
-
-Her work was featured in this gateway pundit article:
-
-https://web.archive.org/web/20201122182331/https://www.thegatewaypundit.com/2020/11/breaking-report-largest-number-cluster-votes-wayne-co-mi-came-psychiatric-hospital-patients-severe-mental-illnesses/
-
-Sarah's work is summarized in this paper
-
-https://web.archive.org/web/20201122220524/https://electint.s3.eu-west-2.amazonaws.com/Wayne+County+Report.pdf
-
-#### Sarah's Claim
-
-Sarah was primarily interested in investigating cluster oddities in Wayne County Michigan.  
 
 ### Truman Black
 
@@ -45,9 +27,13 @@ Truman found NYT data on elections that could be used for his analysis, he saved
 
 https://workupload.com/file/aTKhxPg2RTr
 
-Truman created a python  script to review the data, unfortunately couldnt find a way to archive so I will be storing this script within this repository.
+You'll fine Truman's original data in this repository as well, HERE
+
+Truman created a python script to review the data, unfortunately it was a bit difficult to interpret.
 
 https://workupload.com/start/DV4TvqtWEK8
+
+You'll find Truman's original script in this repository as well, HERE
 
 #### Truman's Claim
 
@@ -55,7 +41,7 @@ Truman's claim is that votes are being switched, across the country.  This is co
 
 ## RESOURCES - DATA
 
-Both Sarah and Truman used the NYT edison records.
+Truman used NYT edison records.
 
 These records showed to still be available to the public on 11/22/2020, but I don't trust that the data will always be available, thus I am saving links to data via archive.org for those states which are most pertinent.
 
