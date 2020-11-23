@@ -1,0 +1,57 @@
+# FROM BASH, FROM ROOT REPO DIRECTORY, GET INTO IRB
+# mb@clm-mb: /replicating_results_of_truman_black irb
+# irb(main):001:0> require './matts_fraudcatch/united_states_edison_data.rb'
+# irb(main):002:0> us_edison_data = UnitedStatesEdisonData.new('./truman_black/truman_black_original_data/')
+# irb(main):006:0> us_edison_data.print_sorted_drop_totals_for_biden
+
+State: CALIFORNIA, Biden total drop: -7723910.908999999
+State: FLORIDA, Biden total drop: -5394084.118999999
+State: TEXAS, Biden total drop: -5257613.639000001
+State: NEWYORK, Biden total drop: -4669382.303999999
+State: PENNSYLVANIA, Biden total drop: -2927152.16
+State: NORTHCAROLINA, Biden total drop: -2668764.497000001
+State: OHIO, Biden total drop: -2594780.7679999997
+State: ILLINOIS, Biden total drop: -2533349.4130000006
+State: VIRGINIA, Biden total drop: -2375861.605
+State: GEORGIA, Biden total drop: -2308746.4769999995
+State: MICHIGAN, Biden total drop: -2066253.7060000007
+State: WASHINGTON, Biden total drop: -2030112.4990000003
+State: JERSEY, Biden total drop: -1776015.5110000002
+State: MINNESOTA, Biden total drop: -1765587.365
+State: COLORADO, Biden total drop: -1632341.368
+State: MASSACHUSETTS, Biden total drop: -1611751.694
+State: WISCONSIN, Biden total drop: -1594816.8259999994
+State: ARIZONA, Biden total drop: -1379884.7690000003
+State: MARYLAND, Biden total drop: -1308916.81
+State: MISSOURI, Biden total drop: -1251539.9599999997
+State: OREGON, Biden total drop: -1236880.7179999999
+State: TENN, Biden total drop: -1148082.793
+State: INDIANA, Biden total drop: -998542.7670000001
+State: CONNECTICUT, Biden total drop: -929199.109
+State: SOUTHCAROLINA, Biden total drop: -908702.7030000002
+State: LOUISIANA, Biden total drop: -838016.109
+State: ALABAMA, Biden total drop: -793209.319
+State: IOWA, Biden total drop: -774518.4029999998
+State: KENTUCKY, Biden total drop: -765844.6940000003
+State: NEVADA, Biden total drop: -551255.4230000001
+State: KANSAS, Biden total drop: -547880.3599999999
+State: OKLAHOMA, Biden total drop: -504765.777
+State: MEXICO, Biden total drop: -495927.21
+State: ARKANSAS, Biden total drop: -421347.491
+State: UTAH, Biden total drop: -404496.72
+State: NEBRASKA, Biden total drop: -378423.4390000001
+State: HAWAII, Biden total drop: -352763.229
+State: MAINE, Biden total drop: -329656.225
+State: NEWHAMP, Biden total drop: -322797.19100000005
+State: MISSISSIPPI, Biden total drop: -321007.069
+State: DELAWARE, Biden total drop: -295377.684
+State: RHODE, Biden total drop: -285256.142
+State: IDAHO, Biden total drop: -278240.201
+State: WESTVIRGINIA, Biden total drop: -257906.922
+State: VERMONT, Biden total drop: -225914.042
+State: MONTANA, Biden total drop: -218098.984
+State: SOUTHDAKOTA, Biden total drop: -127746.04000000001
+State: NORTHDAKOTA, Biden total drop: -112577.85399999999
+State: WYOMING, Biden total drop: -58324.84300000001
+State: ALASKA, Biden total drop: -45968.825
+State: DISTRICTOFCOLUMBIA, Biden total drop: -28663.61

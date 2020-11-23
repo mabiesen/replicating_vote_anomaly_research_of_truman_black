@@ -1,0 +1,58 @@
+# FROM BASH, FROM ROOT REPO DIRECTORY, GET INTO IRB
+# mb@clm-mb: /replicating_results_of_truman_black$ irb
+# irb(main):001:0> require './matts_fraudcatch/united_states_edison_data.rb'
+# irb(main):002:0> us_edison_data = UnitedStatesEdisonData.new('./truman_black/truman_black_original_data/')
+# irb(main):005:0> us_edison_data.print_sorted_drop_totals_for_trump
+
+
+State: TEXAS, Trump total drop: -5857477.4229999995
+State: FLORIDA, Trump total drop: -5669751.647000002
+State: CALIFORNIA, Trump total drop: -3854334.088
+State: PENNSYLVANIA, Trump total drop: -3373904.4880000018
+State: OHIO, Trump total drop: -3058750.273
+State: NEWYORK, Trump total drop: -2976538.5209999997
+State: NORTHCAROLINA, Trump total drop: -2738618.451
+State: GEORGIA, Trump total drop: -2414051.787
+State: MICHIGAN, Trump total drop: -2292083.7109999997
+State: ILLINOIS, Trump total drop: -1904084.3180000002
+State: TENN, Trump total drop: -1853359.0359999998
+State: VIRGINIA, Trump total drop: -1850942.0579999995
+State: MISSOURI, Trump total drop: -1729550.75
+State: WISCONSIN, Trump total drop: -1571677.1439999996
+State: MINNESOTA, Trump total drop: -1552847.3210000002
+State: INDIANA, Trump total drop: -1538327.538
+State: ALABAMA, Trump total drop: -1410945.5790000001
+State: KENTUCKY, Trump total drop: -1352356.7540000002
+State: ARIZONA, Trump total drop: -1239805.8969999999
+State: LOUISIANA, Trump total drop: -1228892.1269999996
+State: WASHINGTON, Trump total drop: -1220031.679
+State: COLORADO, Trump total drop: -1217737.7099999997
+State: SOUTHCAROLINA, Trump total drop: -1214622.503
+State: JERSEY, Trump total drop: -1179692.423
+State: OKLAHOMA, Trump total drop: -1019342.0580000001
+State: IOWA, Trump total drop: -883629.908
+State: OREGON, Trump total drop: -857049.917
+State: ARKANSAS, Trump total drop: -764757.3240000001
+State: MASSACHUSETTS, Trump total drop: -748512.8470000001
+State: MARYLAND, Trump total drop: -731603.488
+State: KANSAS, Trump total drop: -707674.9070000001
+State: CONNECTICUT, Trump total drop: -636949.7050000002
+State: UTAH, Trump total drop: -611532.958
+State: WESTVIRGINIA, Trump total drop: -585549.314
+State: MISSISSIPPI, Trump total drop: -543180.867
+State: NEBRASKA, Trump total drop: -538248.071
+State: NEVADA, Trump total drop: -523500.342
+State: IDAHO, Trump total drop: -516800.97000000003
+State: MEXICO, Trump total drop: -402236.602
+State: MONTANA, Trump total drop: -285038.5070000001
+State: NEWHAMP, Trump total drop: -273265.87500000006
+State: MAINE, Trump total drop: -254436.43600000002
+State: SOUTHDAKOTA, Trump total drop: -245578.80099999995
+State: NORTHDAKOTA, Trump total drop: -230061.949
+State: DELAWARE, Trump total drop: -199932.51400000002
+State: RHODE, Trump total drop: -189312.479
+State: HAWAII, Trump total drop: -178820.07
+State: WYOMING, Trump total drop: -166070.19
+State: VERMONT, Trump total drop: -109592.908
+State: ALASKA, Trump total drop: -81339.65
+State: DISTRICTOFCOLUMBIA, Trump total drop: -1840.2099999999998
