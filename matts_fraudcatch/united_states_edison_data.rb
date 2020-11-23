@@ -25,6 +25,20 @@ class UnitedStatesEdisonData
       puts "State: #{state.state_name}, TOTAL DROP: #{state.total_vote_count_drop}, Biden dropped more? #{state.biden_drop_more_than_trump?}"
     end
   end
+
+  def print_sorted_drop_totals_for_trump
+    sorted = @all_states_edison_data.sort_by {|state| state.trump_total_drop}
+    sorted.each do |state|
+      puts "State: #{state.state_name}, Trump total drop: #{state.trump_total_drop}"
+    end
+  end
+
+  def print_sorted_drop_totals_for_biden
+    sorted = @all_states_edison_data.sort_by {|state| state.biden_total_drop}
+    sorted.each do |state|
+      puts "State: #{state.state_name}, Biden total drop: #{state.biden_total_drop}"
+    end
+  end
 end
 
 #puts "Please provide the directory where state json is located"
