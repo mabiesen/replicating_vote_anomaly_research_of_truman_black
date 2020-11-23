@@ -1,6 +1,8 @@
 # Replicating Results of Truman Black
 This repository's purpose is to store detail on discrepancies noted by Truman Black, as well as attempting to replicate his results.
 
+It is also an ode to this revolver article, which goes much more in-depth with their analysis than I do: https://www.revolver.news/2020/11/explosive-new-data-from-rigorous-statistical-analysis-points-to-voter-fraud-in-montgomery-county-pa/
+
 Truman Black's claim is that many votes were switched between candidates during the 2020 presidential election This is consistent with the weird drop in Trump totals we saw on the CNN feed.  Truman used Edison Research data provided by the New York times to conduct his study.  For more detail, please see [this_link](https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black/tree/main/truman_black)
 
 **From my own review,  I can say that there are MANY anomalies in the Edison Research (via NewYorkTimes) data that Truman used.  IF the edison data is truthful, the anomalies absolutely deserve investigation**
