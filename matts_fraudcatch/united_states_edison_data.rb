@@ -1,14 +1,34 @@
 require_relative 'state_edison_data'
+require 'tmpdir'
+require 'fileutils'
+require 'open-uri'
 
 class UnitedStatesEdisonData
   attr_reader :all_states_edison_data
 
-  def initialize(directory)
+  # leaving nil, the script will fetch fresh data
+  def initialize(directory=nil)
     @all_states_edison_data = []
+    if directory.nil?
+      state_names_list.each do |state_name|
+        Dir.mktmpdir do |d|
+          path = "#{d}/#{state_name}.json"
+          data_stream = fetch_fresh_data(state_name)
+          File.open(path, 'w'){|f| f.write(File.read(data_stream.path))}
+          @all_states_edison_data.push(StateEdisonData.new(path))  
+        end
+      end
+    else
+      Dir["#{directory}*.json"].each do |json_file|
+        @all_states_edison_data.push(StateEdisonData.new(json_file))
+      end 
+    end
+  end
 
-    Dir["#{directory}*.json"].each do |json_file|
-      @all_states_edison_data.push(StateEdisonData.new(json_file))
-    end 
+  def fetch_fresh_data(state_name)
+    url = "https://static01.nyt.com/elections-assets/2020/data/api/2020-11-03/race-page/STATEPLACEHOLDER/president.json"
+    url = url.gsub('STATEPLACEHOLDER', state_name)
+    open(url)
   end
 
   def state_edison_data(state_name)
@@ -102,3 +122,55 @@ class UnitedStatesEdisonData
   end
 end
 
+def state_names_list
+  %w[alabama
+  alaska
+  arizona
+  arkansas
+  california
+  colorado
+  connecticut
+  delaware
+  florida
+  georgia
+  hawaii
+  idaho
+  illinois
+  indiana
+  iowa
+  kansas
+  kentucky
+  louisiana
+  maine
+  maryland
+  massachusetts
+  michigan
+  minnesota
+  mississippi
+  missouri
+  montana
+  nebraska
+  nevada
+  new-hampshire
+  new-jersey
+  new-mexico
+  new-york
+  north-carolina
+  north-dakota
+  ohio
+  oklahoma
+  oregon
+  pennsylvania
+  rhode-island
+  south-carolina
+  south-dakota
+  tennessee
+  texas
+  utah
+  vermont
+  virginia
+  washington
+  west-virginia
+  wisconsin
+  wyoming]
+end
