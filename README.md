@@ -76,6 +76,8 @@ Truman used NYT edison records.
 
 These records showed to still be available to the public on 11/22/2020, but I don't trust that the data will always be available, thus I am saving links to data via archive.org for those states which are most pertinent.
 
+As mentiond, You'll find Truman's original data in this repository, [HERE](https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black/tree/main/truman_black/truman_black_original_data)
+
 PENNSYLVANIA DATA
 https://web.archive.org/web/20201122180531/https://static01.nyt.com/elections-assets/2020/data/api/2020-11-03/race-page/pennsylvania/president.json
 
