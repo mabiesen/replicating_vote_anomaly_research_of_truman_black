@@ -58,7 +58,7 @@ A few scripts have been created to assist with analysis
 
 The user will need to have the Ruby programming language, version does not matter
 
-###### Using report_for_state.rb
+#### Using report_for_state.rb
 
 If you are not familiary with ruby, this is the easiest script to use.
 
@@ -69,7 +69,7 @@ ruby report_for_state.rb
 
 When prompted, provide a filepath to the state json of choice.  The script will run and print out relevant report data.
 
-###### Using United States Edison Data
+#### Using United States Edison Data
 
 1. Get into an irb console
 ```
