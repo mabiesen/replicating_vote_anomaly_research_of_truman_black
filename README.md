@@ -24,8 +24,6 @@ A few scripts have been created to assist with analysis
 *  United States Edison Data - This class is used to allow one to iterate over all states quickly
 *  report_for_state.rb - This script obtains edison data for a given state and prints out a report
 
-#### USE
-
 The user will need to have the Ruby programming language, version does not matter
 
 #### Using report_for_state.rb
