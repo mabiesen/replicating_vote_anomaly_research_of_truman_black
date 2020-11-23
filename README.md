@@ -11,7 +11,7 @@ https://web.archive.org/web/20201123024901/https://github.com/mabiesen/replicati
 
 ## CONCLUSION / FINDINGS
 
-See some of my results at [this link in this repository](https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black/tree/main/matt_fraudcatch_results)
+See some of my results at [this link in this repository](https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black/tree/main/matts_fraudcatch_results)
 
 It was difficult to read Truman Black's original script. I have not yet studied whether votes have switched between candidates, this is coming soon.  I have avoided looking into this thus far due to the potential for rounding error using the percentages provided in the data.
 
