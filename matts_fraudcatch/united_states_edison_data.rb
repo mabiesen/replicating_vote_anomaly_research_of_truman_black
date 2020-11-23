@@ -65,5 +65,9 @@ class UnitedStatesEdisonData
       puts "State: #{state.state_name} Dropped Votes #{state.vote_drop_timeseries_data.count} times"
     end
   end
+
+  def print_winner_for_states
+    @all_states_edison_data.each{|state| puts "#{state.state_name}: #{state.winner}"}
+  end
 end
 

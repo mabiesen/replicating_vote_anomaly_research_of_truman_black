@@ -4,6 +4,7 @@ require 'date'
 class StateEdisonData
   attr_reader :state_json_data, :state_name
   attr_reader :total_vote_count_drop, :biden_total_drop, :trump_total_drop
+  attr_reader :winner
   
   def initialize(filepath)
     @state_name = File.basename(filepath, '.*').upcase
@@ -60,6 +61,13 @@ class StateEdisonData
 
   def time_series_data
     @state_json_data["data"]["races"][0]["timeseries"]
+  end
+
+  def winner
+    return @winner unless @winner.nil?
+
+    last_entry = time_series_data.last
+    @winner = last_entry['vote_shares']['trumpd'] > last_entry['vote_shares']['bidenj'] ? 'trump' : 'biden'
   end
 
   def total_vote_count_drop
