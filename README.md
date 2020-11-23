@@ -87,6 +87,7 @@ us_edison_data = UnitedStatesEdisonData.new('/some/path/to/a/directory/')
 ```
 
 Now, you should be able to access all of the methods provided by state edison data, these include:
+* state_edison_data(<state_name>) - get the StateEdisonData for a given state.  Good for drilling into the particulars of a given state
 * states_with_vote_total_drop - provides a list of states where vote totals dropped at least once
 * print_drop_totals_for_states - iterates through all states and prints how much the total dropped for a given state
 * print_sorted_drop_totals_for_trump - iterates through all states and prints out how much Trump's total votes dropped
