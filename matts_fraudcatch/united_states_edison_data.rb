@@ -73,7 +73,31 @@ class UnitedStatesEdisonData
   def print_winner_and_if_winner_dropped_more
     @all_states_edison_data.each do |state| 
       did_winner_drop_more = state.winner == 'biden' ? state.biden_drop_more_than_trump? : !state.biden_drop_more_than_trump?
-      puts "#{state.state_name}: #{state.winner}: winner dropped more? #{state.biden_drop_more_than_trump?}"
+      puts "#{state.state_name}: #{state.winner}: winner dropped more? #{did_winner_drop_more}"
+    end
+  end
+
+  def print_states_where_trump_won_and_dropped_more
+    puts "Printing States Where Trump Won And Dropped More Votes"
+    @all_states_edison_data.each do |state|
+      next unless state.winner == 'trump'
+
+      did_winner_drop_more = state.winner == 'biden' ? state.biden_drop_more_than_trump? : !state.biden_drop_more_than_trump?
+      if did_winner_drop_more
+        puts state.state_name
+      end
+    end
+  end
+
+  def print_states_where_biden_won_and_dropped_more
+    puts "Printing States Where Biden Won And Dropped More Votes"
+    @all_states_edison_data.each do |state|
+      next unless state.winner == 'biden'
+
+      did_winner_drop_more = state.winner == 'biden' ? state.biden_drop_more_than_trump? : !state.biden_drop_more_than_trump?
+      if did_winner_drop_more
+        puts state.state_name
+      end
     end
   end
 end

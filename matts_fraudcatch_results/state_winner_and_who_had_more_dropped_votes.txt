@@ -2,29 +2,29 @@
 # mb@clm-mb: /replicating_results_of_truman_black irb
 # irb(main):001:0> require './matts_fraudcatch/united_states_edison_data.rb'
 # irb(main):002:0> us_edison_data = UnitedStatesEdisonData.new('./truman_black/truman_black_original_data/')
-# irb(main):004:0> us_edison_data.print_winner_and_who_dropped_more_votes
+# irb(main):004:0> us_edison_data.print_winner_and_if_winner_dropped_more
 
-TEXAS: trump: winner dropped more? false
-IDAHO: trump: winner dropped more? false
-WESTVIRGINIA: trump: winner dropped more? false
-NEBRASKA: trump: winner dropped more? false
+TEXAS: trump: winner dropped more? true
+IDAHO: trump: winner dropped more? true
+WESTVIRGINIA: trump: winner dropped more? true
+NEBRASKA: trump: winner dropped more? true
 MASSACHUSETTS: biden: winner dropped more? true
 ARIZONA: biden: winner dropped more? true
 GEORGIA: biden: winner dropped more? false
 WISCONSIN: biden: winner dropped more? true
-WYOMING: trump: winner dropped more? false
-ALASKA: trump: winner dropped more? false
-KANSAS: trump: winner dropped more? false
-MISSOURI: trump: winner dropped more? false
+WYOMING: trump: winner dropped more? true
+ALASKA: trump: winner dropped more? true
+KANSAS: trump: winner dropped more? true
+MISSOURI: trump: winner dropped more? true
 MAINE: biden: winner dropped more? true
-IOWA: trump: winner dropped more? false
-ARKANSAS: trump: winner dropped more? false
+IOWA: trump: winner dropped more? true
+ARKANSAS: trump: winner dropped more? true
 MEXICO: biden: winner dropped more? true
 COLORADO: biden: winner dropped more? true
-SOUTHCAROLINA: trump: winner dropped more? false
-ALABAMA: trump: winner dropped more? false
+SOUTHCAROLINA: trump: winner dropped more? true
+ALABAMA: trump: winner dropped more? true
 HAWAII: biden: winner dropped more? true
-SOUTHDAKOTA: trump: winner dropped more? false
+SOUTHDAKOTA: trump: winner dropped more? true
 VIRGINIA: biden: winner dropped more? true
 CALIFORNIA: biden: winner dropped more? true
 MARYLAND: biden: winner dropped more? true
@@ -33,25 +33,25 @@ PENNSYLVANIA: biden: winner dropped more? false
 CONNECTICUT: biden: winner dropped more? true
 WASHINGTON: biden: winner dropped more? true
 MICHIGAN: biden: winner dropped more? false
-KENTUCKY: trump: winner dropped more? false
+KENTUCKY: trump: winner dropped more? true
 DELAWARE: biden: winner dropped more? true
-INDIANA: trump: winner dropped more? false
-FLORIDA: trump: winner dropped more? false
-NORTHDAKOTA: trump: winner dropped more? false
-OKLAHOMA: trump: winner dropped more? false
+INDIANA: trump: winner dropped more? true
+FLORIDA: trump: winner dropped more? true
+NORTHDAKOTA: trump: winner dropped more? true
+OKLAHOMA: trump: winner dropped more? true
 VERMONT: biden: winner dropped more? true
 NEWYORK: biden: winner dropped more? true
 RHODE: biden: winner dropped more? true
-UTAH: trump: winner dropped more? false
+UTAH: trump: winner dropped more? true
 MINNESOTA: biden: winner dropped more? true
 NEWHAMP: biden: winner dropped more? true
-MONTANA: trump: winner dropped more? false
-TENN: trump: winner dropped more? false
-NORTHCAROLINA: trump: winner dropped more? false
+MONTANA: trump: winner dropped more? true
+TENN: trump: winner dropped more? true
+NORTHCAROLINA: trump: winner dropped more? true
 NEVADA: biden: winner dropped more? true
-MISSISSIPPI: trump: winner dropped more? false
+MISSISSIPPI: trump: winner dropped more? true
 JERSEY: biden: winner dropped more? true
 ILLINOIS: biden: winner dropped more? true
 OREGON: biden: winner dropped more? true
-LOUISIANA: trump: winner dropped more? false
-OHIO: trump: winner dropped more? false
+LOUISIANA: trump: winner dropped more? true
+OHIO: trump: winner dropped more? true
