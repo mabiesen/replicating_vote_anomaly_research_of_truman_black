@@ -25,7 +25,7 @@ Truman found NYT data on elections that could be used for his analysis, he saved
 
 https://workupload.com/file/aTKhxPg2RTr
 
-You'll find Truman's original data in this repository as well, HERE
+You'll find Truman's original data in this repository as well, [HERE](https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black/tree/main/truman_black/truman_black_original_data)
 
 Truman created a python script to review the data, unfortunately it was a bit difficult to interpret.
 
