@@ -1,7 +1,8 @@
 # FROM BASH, FROM ROOT REPO DIRECTORY, GET INTO IRB
 # mb@clm-mb: /replicating_results_of_truman_black irb
 # irb(main):001:0> require './matts_fraudcatch/united_states_edison_data.rb'
-# irb(main):002:0> us_edison_data = UnitedStatesEdisonData.new('./truman_black/truman_black_original_data/')irb(main):003:0> oh = us_edison_data.state_edison_data('ohio')
+# irb(main):002:0> us_edison_data = UnitedStatesEdisonData.new('./truman_black/truman_black_original_data/')
+# irb(main):003:0> oh = us_edison_data.state_edison_data('ohio')
 # irb(main):004:0> oh.print_report
 
 EVALUATING OHIO
