@@ -69,5 +69,12 @@ class UnitedStatesEdisonData
   def print_winner_for_states
     @all_states_edison_data.each{|state| puts "#{state.state_name}: #{state.winner}"}
   end
+
+  def print_winner_and_if_winner_dropped_more
+    @all_states_edison_data.each do |state| 
+      did_winner_drop_more = state.winner == 'biden' ? state.biden_drop_more_than_trump? : !state.biden_drop_more_than_trump?
+      puts "#{state.state_name}: #{state.winner}: winner dropped more? #{state.biden_drop_more_than_trump?}"
+    end
+  end
 end
 
