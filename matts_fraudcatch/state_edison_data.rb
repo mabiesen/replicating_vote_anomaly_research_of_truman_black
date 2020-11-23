@@ -62,23 +62,6 @@ class StateEdisonData
     @state_json_data["data"]["races"][0]["timeseries"]
   end
 
-  def print_report()
-    puts "EVALUATING #{@state_name}"
-    puts ""
-
-    puts "Printing times where the lead switched"
-    print_times_where_lead_switched
-
-    puts "Printing times where the total vote count dropped"
-    print_times_where_total_vote_count_dropped
-
-    puts "Printing times where Trumps total dropped"
-    print_times_where_candidate_total_dropped('Trump')
-
-    puts "Printing times where Bidens total dropped"
-    print_times_where_candidate_total_dropped('Biden')
-  end
-
   def total_vote_count_drop
     return @total_vote_count_drop unless @total_vote_count_drop.nil?
 
@@ -128,6 +111,23 @@ class StateEdisonData
       end
     end
     vote_drops
+  end
+
+  def print_report()
+    puts "EVALUATING #{@state_name}"
+    puts ""
+
+    puts "Printing times where the lead switched"
+    print_times_where_lead_switched
+
+    puts "Printing times where the total vote count dropped"
+    print_times_where_total_vote_count_dropped
+
+    puts "Printing times where Trumps total dropped"
+    print_times_where_candidate_total_dropped('Trump')
+
+    puts "Printing times where Bidens total dropped"
+    print_times_where_candidate_total_dropped('Biden')
   end
 
   def print_times_where_total_vote_count_dropped

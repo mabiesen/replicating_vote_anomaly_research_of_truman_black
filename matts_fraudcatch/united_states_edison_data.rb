@@ -50,5 +50,13 @@ class UnitedStatesEdisonData
       puts "State #{state.state_name} most commonly dropped votes on #{most_common_date}"
     end
   end
+
+  def print_states_where_candiate_dropped_more(candidate)
+    if candidate.downcase == 'biden'
+      @all_states_edison_data.select{|state| state.biden_drop_more_than_trump?}.each{|state| puts state.state_name}
+    else
+      @all_states_edison_data.select{|state| !state.biden_drop_more_than_trump?}.each{|state| puts state.state_name}
+    end
+  end
 end
 
