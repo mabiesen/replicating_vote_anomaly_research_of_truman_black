@@ -2,11 +2,39 @@ require 'json'
 require 'date'
 
 class StateEdisonData
-  attr_accessor :state_json_data, :state_name
+  attr_reader :state_json_data, :state_name
+  attr_reader :total_vote_count_drop, :biden_total_drop, :trump_total_drop
   
   def initialize(filepath)
     @state_name = File.basename(filepath, '.*').upcase
     state_json_data(filepath)
+    total_vote_count_drop
+    @biden_total_drop = vote_drop_total_for_candidate('Biden')
+    @trump_total_drop = vote_drop_total_for_candidate('Trump')
+  end
+
+  def did_total_vote_count_drop?
+    return true if @total_vote_count_drop < 0
+
+    false
+  end
+
+  def did_biden_vote_count_drop?
+    return true if @biden_total_drop < 0
+
+    false
+  end
+
+  def did_trump_vote_count_drop?
+    return true if @trump_total_drop < 0
+
+    false
+  end
+
+  def biden_drop_more_than_trump?
+    return true if @biden_total_drop < @trump_total_drop
+
+    false
   end
 
   def state_json_data(filepath)
@@ -45,10 +73,45 @@ class StateEdisonData
     print_times_where_total_vote_count_dropped
 
     puts "Printing times where Trumps total dropped"
-    print_times_where_candidates_personal_total_dropped('Trump')
+    print_times_where_candidate_total_dropped('Trump')
 
     puts "Printing times where Bidens total dropped"
-    print_times_where_candidates_personal_total_dropped('Biden')
+    print_times_where_candidate_total_dropped('Biden')
+  end
+
+  def total_vote_count_drop
+    return @total_vote_count_drop unless @total_vote_count_drop.nil?
+
+    @total_vote_count_drop = 0
+    time_series_data.each_with_index do |tsdata, index|
+      next if index == 0
+
+      current_votes = tsdata['votes']
+      current_timestamp = tsdata['timestamp']
+      last_votes = time_series_data[index - 1]['votes']
+      last_timestamp = time_series_data[index - 1]['timestamp']
+      if tsdata['votes'] < time_series_data[index - 1]['votes']
+        @total_vote_count_drop += current_votes - last_votes
+      end
+    end
+    @total_vote_count_drop
+  end
+
+  def vote_drop_total_for_candidate(candidate)
+    candidate_key = candidate.downcase == 'trump' ? 'trumpd' : 'bidenj'
+    sum = 0
+    time_series_data.each_with_index do |tsdata, index|
+      next if index == 0
+
+      last_tsdata  = time_series_data[index - 1]
+      last_total = last_tsdata['vote_shares'][candidate_key] * last_tsdata['votes']
+      current_total =  tsdata['vote_shares'][candidate_key] * tsdata['votes']
+
+      if last_total > current_total
+        sum += current_total - last_total
+      end
+    end
+    sum
   end
 
   def print_times_where_total_vote_count_dropped
@@ -83,7 +146,7 @@ class StateEdisonData
     puts "\n\n"
   end
 
-  def print_times_where_candidates_personal_total_dropped(candidate)
+  def print_times_where_candidate_total_dropped(candidate)
     candidate_key = candidate.downcase == 'trump' ? 'trumpd' : 'bidenj' 
 
     time_series_data.each_with_index do |tsdata, index|
