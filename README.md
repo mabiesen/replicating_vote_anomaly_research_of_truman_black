@@ -31,7 +31,7 @@ Truman created a python script to review the data, unfortunately it was a bit di
 
 https://workupload.com/start/DV4TvqtWEK8
 
-You'll find Truman's original script in this repository as well, HERE
+You'll find Truman's original script in this repository as well, [HERE](https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black/blob/main/truman_black/fraudcatch.py)
 
 #### Truman's Claim
 
