@@ -1,0 +1,61 @@
+# FROM BASH, FROM ROOT REPO DIRECTORY, GET INTO IRB
+# mb@clm-mb: /replicating_results_of_truman_black irb
+# irb(main):001:0> require './matts_fraudcatch/united_states_edison_data.rb'
+# irb(main):002:0> us_edison_data = UnitedStatesEdisonData.new('./truman_black/truman_black_original_data/')
+# irb(main):003:0> us_edison_data.print_states_by_vote_drop_frequency
+# This is showing the number of times that votes were dropped across states
+# VOTE TOTALS SHOULD NEVER DROP WHILE THEY ARE BEING COUNTED
+# NOTE THAT SWING STATES DROPPED MORE OFTEN
+
+
+State: UTAH Dropped Votes 1 times
+State: IDAHO Dropped Votes 1 times
+State: ARIZONA Dropped Votes 1 times
+State: WYOMING Dropped Votes 1 times
+State: ALASKA Dropped Votes 1 times
+State: COLORADO Dropped Votes 1 times
+State: HAWAII Dropped Votes 1 times
+State: MARYLAND Dropped Votes 1 times
+State: DISTRICTOFCOLUMBIA Dropped Votes 1 times
+State: WASHINGTON Dropped Votes 1 times
+State: DELAWARE Dropped Votes 1 times
+State: INDIANA Dropped Votes 1 times
+State: OKLAHOMA Dropped Votes 1 times
+State: VERMONT Dropped Votes 1 times
+State: TENN Dropped Votes 1 times
+State: NEVADA Dropped Votes 1 times
+State: MISSISSIPPI Dropped Votes 1 times
+State: OREGON Dropped Votes 1 times
+State: LOUISIANA Dropped Votes 1 times
+State: ALABAMA Dropped Votes 2 times
+State: SOUTHDAKOTA Dropped Votes 2 times
+State: CALIFORNIA Dropped Votes 2 times
+State: NEWHAMP Dropped Votes 2 times
+State: MONTANA Dropped Votes 2 times
+State: JERSEY Dropped Votes 2 times
+State: NORTHCAROLINA Dropped Votes 2 times
+State: WESTVIRGINIA Dropped Votes 2 times
+State: NEBRASKA Dropped Votes 2 times
+State: MASSACHUSETTS Dropped Votes 2 times
+State: OHIO Dropped Votes 2 times
+State: MAINE Dropped Votes 2 times
+State: IOWA Dropped Votes 2 times
+State: MEXICO Dropped Votes 2 times
+State: RHODE Dropped Votes 2 times
+State: SOUTHCAROLINA Dropped Votes 2 times
+State: KANSAS Dropped Votes 3 times
+State: ILLINOIS Dropped Votes 3 times
+State: WISCONSIN Dropped Votes 3 times
+State: NEWYORK Dropped Votes 3 times
+State: FLORIDA Dropped Votes 3 times
+State: MISSOURI Dropped Votes 3 times
+State: GEORGIA Dropped Votes 4 times
+State: NORTHDAKOTA Dropped Votes 4 times
+State: MICHIGAN Dropped Votes 4 times
+State: CONNECTICUT Dropped Votes 5 times
+State: ARKANSAS Dropped Votes 6 times
+State: KENTUCKY Dropped Votes 6 times
+State: MINNESOTA Dropped Votes 6 times
+State: VIRGINIA Dropped Votes 7 times
+State: PENNSYLVANIA Dropped Votes 8 times
+State: TEXAS Dropped Votes 9 times
