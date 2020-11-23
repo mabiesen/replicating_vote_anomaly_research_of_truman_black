@@ -20,9 +20,9 @@ Either the NYT/Edison data is flawed, or **a machine malfunction has occurred ac
 ## REPLICATING MY RESULTS
 
 A few scripts have been created to assist with analysis
-*  State Edison Data - This class helps to obtain and report data for an individual state
-*  United States Edison Data - This class is used to allow one to iterate over all states quickly
-*  report_for_state.rb - This script obtains edison data for a given state and prints out a report
+*  [State Edison Data](https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black/blob/main/matts_fraudcatch/state_edison_data.rb) - This class helps to obtain and report data for an individual state
+*  [United States Edison Data](https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black/blob/main/matts_fraudcatch/united_states_edison_data.rb) - This class is used to allow one to iterate over all states quickly
+*  [report_for_state.rb](https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black/blob/main/matts_fraudcatch/report_for_state.rb) - This script obtains edison data for a given state and prints out a report
 
 The user will need to have the Ruby programming language, version does not matter
 
