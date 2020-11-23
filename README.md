@@ -3,7 +3,7 @@ This repository's purpose is to store detail on discrepancies noted by Truman Bl
 
 Truman Black's claim is that many votes were switched between candidates during the 2020 presidential election.  For more detail, please see [this_link](https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black/tree/main/truman_black)
 
-**From my own review,  I can say that there are MANY anomalies in the Edison Research data that Truman used**
+**From my own review,  I can say that there are MANY anomalies in the Edison Research (via NewYorkTimes) data that Truman used**
 
 This repository has been saved to archive.org to prevent disappearing
 
