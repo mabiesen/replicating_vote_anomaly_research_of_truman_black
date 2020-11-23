@@ -142,6 +142,7 @@ class StateEdisonData
         puts "total count dropped by #{current_votes - last_votes} between #{last_timestamp} and #{current_timestamp}"
       end
     end
+    puts "TOTAL DROP WAS #{total_vote_count_drop}"
     puts "\n\n"
   end
 
@@ -163,6 +164,7 @@ class StateEdisonData
   end
 
   def print_times_where_candidate_total_dropped(candidate)
+    total_drop = 0
     candidate_key = candidate.downcase == 'trump' ? 'trumpd' : 'bidenj' 
 
     time_series_data.each_with_index do |tsdata, index|
@@ -173,8 +175,10 @@ class StateEdisonData
 
       if last_total > current_total
         puts "AT #{tsdata['timestamp']}, #{candidate}'s total dropped by #{current_total - last_total}"
+        total_drop += current_total - last_total
       end
     end
+    puts "TOTAL DROP FOR #{candidate.upcase} was #{total_drop}"
     puts "\n\n"
   end
 end
