@@ -11,11 +11,9 @@ https://web.archive.org/web/20201123024901/https://github.com/mabiesen/replicati
 
 ## CONCLUSION / FINDINGS
 
-As mentioned, it was difficult to read Truman Black's original script.
+It was difficult to read Truman Black's original script. I have not yet studied whether votes have switched between candidates, this is coming soon.
 
-I have not yet studied whether votes have switched between candidates.
-
-**However I can say definitively that EVERY state saw at least 1 occasion where votes dropped between time series data** (i.e., the first time series says 10 votes total for state and the following timeseries data shows 8 votes total for state).  I can also say definitively, on average, SWING STATES SAW MORE OCCASIONS WHERE VOTE TOTALS DROPPED.
+**However I can say definitively that EVERY state saw at least 1 occasion where votes dropped between time series data** (i.e., the first time series says 10 votes total for state and the following timeseries data shows 8 votes total for state).  I can also say definitively, **on average, SWING STATES SAW MORE OCCASIONS WHERE VOTE TOTALS DROPPED.**
 
 Either the NYT/Edison data is flawed, or **a machine malfunction has occurred across all states**, or **some malicious actor(s) are committing fraud**
 
