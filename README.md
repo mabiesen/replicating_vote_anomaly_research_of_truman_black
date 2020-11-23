@@ -5,7 +5,7 @@ To prevent the removal/disappearance of data over time, all links have been save
 
 This repository has also been saved to archive.org
 
-https://web.archive.org/web/20201122213953/https://github.com/mabiesen/replicating_results_of_sarah_eaglesfield_and_truman_black
+https://web.archive.org/web/20201123024901/https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black
 
 ## BACKGROUND - What is being claimed?
 
@@ -17,7 +17,7 @@ https://thedonald.win/p/11Q8O2wesk/happening-calling-every-pede-to-/
 
 https://web.archive.org/web/20201122021514/https://thedonald.win/p/11Q8O2wesk/happening-calling-every-pede-to-/
 
-His work outlines many irregularities across many states.  
+His work outlines many vote total irregularities across many states.  
 
 Truman had seen the following gateway pundit article which sparked him to dig into data:
 
@@ -27,7 +27,7 @@ Truman found NYT data on elections that could be used for his analysis, he saved
 
 https://workupload.com/file/aTKhxPg2RTr
 
-You'll fine Truman's original data in this repository as well, HERE
+You'll find Truman's original data in this repository as well, HERE
 
 Truman created a python script to review the data, unfortunately it was a bit difficult to interpret.
 
