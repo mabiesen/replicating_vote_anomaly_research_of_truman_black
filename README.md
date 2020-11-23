@@ -1,9 +1,7 @@
 # Replicating Results of Truman Black
 This repository's purpose is to store detail on discrepancies noted by Truman Black, as well as attempting to replicate his results
 
-To prevent the removal/disappearance of data over time, all links have been saved to archive.org.  When replicating results please be cognizant of snapshot date, I will provide the snapshot dates I use such that results may be replicated apples-to-apples.
-
-This repository has also been saved to archive.org
+This repository has been saved to archive.org to prevent disappearing
 
 https://web.archive.org/web/20201123024901/https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black
 
