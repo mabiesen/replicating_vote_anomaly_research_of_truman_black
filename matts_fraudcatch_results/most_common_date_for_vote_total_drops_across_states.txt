@@ -1,0 +1,58 @@
+# FROM BASH, FROM ROOT REPO DIRECTORY, GET INTO IRB
+# mb@clm-mb: /replicating_results_of_sarah_eaglesfield_and_truman_black main!
+$ irb
+# irb(main):001:0> require './matts_fraudcatch/united_states_edison_data.rb'
+# irb(main):002:0> us_edison_data = UnitedStatesEdisonData.new('./truman_black/truman_black_original_data/')
+# irb(main):003:0> us_edison_data.print_most_common_day_for_vote_drops_in_state
+
+State TEXAS most commonly dropped votes on 2020-11-06
+State IDAHO most commonly dropped votes on 2020-11-04
+State WESTVIRGINIA most commonly dropped votes on 2020-11-08
+State NEBRASKA most commonly dropped votes on 2020-11-09
+State MASSACHUSETTS most commonly dropped votes on 2020-11-05
+State ARIZONA most commonly dropped votes on 2020-11-04
+State GEORGIA most commonly dropped votes on 2020-11-05
+State WISCONSIN most commonly dropped votes on 2020-11-04
+State WYOMING most commonly dropped votes on 2020-11-04
+State ALASKA most commonly dropped votes on 2020-11-04
+State KANSAS most commonly dropped votes on 2020-11-09
+State MISSOURI most commonly dropped votes on 2020-11-04
+State MAINE most commonly dropped votes on 2020-11-04
+State IOWA most commonly dropped votes on 2020-11-07
+State ARKANSAS most commonly dropped votes on 2020-11-06
+State MEXICO most commonly dropped votes on 2020-11-06
+State COLORADO most commonly dropped votes on 2020-11-04
+State SOUTHCAROLINA most commonly dropped votes on 2020-11-09
+State ALABAMA most commonly dropped votes on 2020-11-06
+State HAWAII most commonly dropped votes on 2020-11-04
+State SOUTHDAKOTA most commonly dropped votes on 2020-11-10
+State VIRGINIA most commonly dropped votes on 2020-11-04
+State CALIFORNIA most commonly dropped votes on 2020-11-09
+State MARYLAND most commonly dropped votes on 2020-11-04
+State DISTRICTOFCOLUMBIA most commonly dropped votes on 2020-11-04
+State PENNSYLVANIA most commonly dropped votes on 2020-11-04
+State CONNECTICUT most commonly dropped votes on 2020-11-09
+State WASHINGTON most commonly dropped votes on 2020-11-04
+State MICHIGAN most commonly dropped votes on 2020-11-04
+State KENTUCKY most commonly dropped votes on 2020-11-09
+State DELAWARE most commonly dropped votes on 2020-11-04
+State INDIANA most commonly dropped votes on 2020-11-04
+State FLORIDA most commonly dropped votes on 2020-11-04
+State NORTHDAKOTA most commonly dropped votes on 2020-11-09
+State OKLAHOMA most commonly dropped votes on 2020-11-04
+State VERMONT most commonly dropped votes on 2020-11-04
+State NEWYORK most commonly dropped votes on 2020-11-08
+State RHODE most commonly dropped votes on 2020-11-04
+State UTAH most commonly dropped votes on 2020-11-04
+State MINNESOTA most commonly dropped votes on 2020-11-09
+State NEWHAMP most commonly dropped votes on 2020-11-06
+State MONTANA most commonly dropped votes on 2020-11-04
+State TENN most commonly dropped votes on 2020-11-04
+State NORTHCAROLINA most commonly dropped votes on 2020-11-04
+State NEVADA most commonly dropped votes on 2020-11-04
+State MISSISSIPPI most commonly dropped votes on 2020-11-04
+State JERSEY most commonly dropped votes on 2020-11-06
+State ILLINOIS most commonly dropped votes on 2020-11-04
+State OREGON most commonly dropped votes on 2020-11-04
+State LOUISIANA most commonly dropped votes on 2020-11-04
+State OHIO most commonly dropped votes on 2020-11-09
