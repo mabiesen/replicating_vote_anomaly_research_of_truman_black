@@ -7,7 +7,7 @@ Truman Black's claim is that many votes were switched between candidates during 
 
 **From my own review,  I can say that there are MANY anomalies in the Edison Research (via NewYorkTimes) data that Truman used.  IF the edison data is truthful, the anomalies absolutely deserve investigation**
 
-As the Revolver article pointed out, it is unlike NYT to make mistakes of magnitude, and mistakes in data do not appear statistically likely to be genuine ballot errors. 
+As the Revolver article pointed out, it is unlike NYT to make mistakes of magnitude, and mistakes in data do not appear statistically likely to be genuine ballot errors. If genuine error is not to blame, the numbers certainly deserve investigation.
 
 This repository has been saved to archive.org to prevent disappearing
 
