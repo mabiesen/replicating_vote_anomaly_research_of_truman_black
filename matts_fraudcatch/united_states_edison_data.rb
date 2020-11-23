@@ -12,7 +12,7 @@ class UnitedStatesEdisonData
   end
 
   def state_edison_data(state_name)
-    @all_states_edison_data.find {|state_data| state_data.state_name == state_name}
+    @all_states_edison_data.find {|state_data| state_data.state_name.downcase == state_name.downcase}
   end
 
   def states_with_vote_total_drop
