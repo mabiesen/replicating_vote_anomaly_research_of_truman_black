@@ -1,0 +1,56 @@
+# FROM BASH, FROM ROOT REPO DIRECTORY, GET INTO IRB
+# mb@clm-mb: /replicating_results_of_truman_black irb
+# irb(main):001:0> require './matts_fraudcatch/united_states_edison_data.rb'
+# irb(main):002:0> us_edison_data = UnitedStatesEdisonData.new('./truman_black/truman_black_original_data/')
+# irb(main):009:0> wi = us_edison_data.state_edison_data('wisconsin')
+# irb(main):010:0> wi.print_report
+
+EVALUATING WISCONSIN
+
+Printing times where the lead switched
+Lead switched in Trump's favor at 2020-11-04T02:18:58+00:00
+Lead switched in Biden's favor at 2020-11-04T02:23:05+00:00
+Lead switched in Trump's favor at 2020-11-04T02:24:58+00:00
+Lead switched in Biden's favor at 2020-11-04T02:29:02+00:00
+Lead switched in Trump's favor at 2020-11-04T02:30:00+00:00
+Lead switched in Biden's favor at 2020-11-04T02:34:40+00:00
+Lead switched in Trump's favor at 2020-11-04T02:46:37+00:00
+Lead switched in Biden's favor at 2020-11-04T02:46:58+00:00
+Lead switched in Trump's favor at 2020-11-04T02:58:08+00:00
+Lead switched in Biden's favor at 2020-11-04T09:42:20+00:00
+
+
+Printing times where the total vote count dropped
+total count dropped by -3343 between 2020-11-04T05:24:07+00:00 and 2020-11-04T05:24:16+00:00
+total count dropped by -3198881 between 2020-11-04T10:00:53+00:00 and 2020-11-04T10:02:04+00:00
+total count dropped by -65 between 2020-11-04T17:44:57+00:00 and 2020-11-04T18:27:01+00:00
+
+
+Printing times where Trumps total dropped
+AT 2020-11-04T02:48:16+00:00, Trump's total dropped by -390.70799999998417
+AT 2020-11-04T03:37:17+00:00, Trump's total dropped by -518.1699999999255
+AT 2020-11-04T05:24:16+00:00, Trump's total dropped by -1724.9879999998957
+AT 2020-11-04T05:27:57+00:00, Trump's total dropped by -943.4560000000056
+AT 2020-11-04T08:12:01+00:00, Trump's total dropped by -616.4120000000112
+AT 2020-11-04T10:02:04+00:00, Trump's total dropped by -1567451.69
+AT 2020-11-04T18:27:01+00:00, Trump's total dropped by -31.71999999997206
+
+
+Printing times where Bidens total dropped
+AT 2020-11-04T02:37:36+00:00, Biden's total dropped by -79.0909999999858
+AT 2020-11-04T02:48:16+00:00, Biden's total dropped by -369.50699999998324
+AT 2020-11-04T02:55:58+00:00, Biden's total dropped by -223.81400000001304
+AT 2020-11-04T03:57:47+00:00, Biden's total dropped by -619.640000000014
+AT 2020-11-04T04:15:05+00:00, Biden's total dropped by -133.53599999996368
+AT 2020-11-04T04:20:07+00:00, Biden's total dropped by -1371.8179999999702
+AT 2020-11-04T04:47:38+00:00, Biden's total dropped by -1176.7579999999143
+AT 2020-11-04T05:10:01+00:00, Biden's total dropped by -200.94299999973737
+AT 2020-11-04T05:24:16+00:00, Biden's total dropped by -1561.180999999866
+AT 2020-11-04T05:54:15+00:00, Biden's total dropped by -1892.7390000000596
+AT 2020-11-04T06:16:33+00:00, Biden's total dropped by -621.653999999864
+AT 2020-11-04T06:21:44+00:00, Biden's total dropped by -2110.7450000001118
+AT 2020-11-04T06:30:39+00:00, Biden's total dropped by -1839.444000000134
+AT 2020-11-04T10:02:04+00:00, Biden's total dropped by -1577048.3329999999
+AT 2020-11-04T11:03:24+00:00, Biden's total dropped by -2417.998999999836
+AT 2020-11-04T17:44:57+00:00, Biden's total dropped by -3117.5139999999665
+AT 2020-11-04T18:27:01+00:00, Biden's total dropped by -32.110000000102445
