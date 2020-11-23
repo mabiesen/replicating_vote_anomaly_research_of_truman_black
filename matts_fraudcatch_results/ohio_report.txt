@@ -1,0 +1,37 @@
+# FROM BASH, FROM ROOT REPO DIRECTORY, GET INTO IRB
+# mb@clm-mb: /replicating_results_of_truman_black irb
+# irb(main):001:0> require './matts_fraudcatch/united_states_edison_data.rb'
+# irb(main):002:0> us_edison_data = UnitedStatesEdisonData.new('./truman_black/truman_black_original_data/')irb(main):003:0> oh = us_edison_data.state_edison_data('ohio')
+# irb(main):004:0> oh.print_report
+
+EVALUATING OHIO
+
+Printing times where the lead switched
+Lead switched in Trump's favor at 2020-11-04T03:00:12+00:00
+Lead switched in Biden's favor at 2020-11-04T08:04:21+00:00
+Lead switched in Trump's favor at 2020-11-08T19:31:45+00:00
+
+
+Printing times where the total vote count dropped
+total count dropped by -5701651 between 2020-11-04T06:23:50+00:00 and 2020-11-04T08:04:21+00:00
+total count dropped by -5102 between 2020-11-08T19:31:45+00:00 and 2020-11-09T20:25:39+00:00
+
+
+Printing times where Trumps total dropped
+AT 2020-11-04T03:52:26+00:00, Trump's total dropped by -5119.884000000078
+AT 2020-11-04T04:15:57+00:00, Trump's total dropped by -5234.595999999903
+AT 2020-11-04T05:12:29+00:00, Trump's total dropped by -4805.097000000067
+AT 2020-11-04T05:53:11+00:00, Trump's total dropped by -4610.712999999989
+AT 2020-11-04T08:04:21+00:00, Trump's total dropped by -3038979.983
+
+
+Printing times where Bidens total dropped
+AT 2020-11-04T00:44:11+00:00, Biden's total dropped by -208.85899999999674
+AT 2020-11-04T01:32:55+00:00, Biden's total dropped by -32.584000000031665
+AT 2020-11-04T01:59:53+00:00, Biden's total dropped by -186.62800000002608
+AT 2020-11-04T02:03:53+00:00, Biden's total dropped by -1356.2709999999497
+AT 2020-11-04T02:22:05+00:00, Biden's total dropped by -162.247999999905
+AT 2020-11-04T03:56:46+00:00, Biden's total dropped by -2680.18200000003
+AT 2020-11-04T05:12:29+00:00, Biden's total dropped by -4931.9509999998845
+AT 2020-11-04T08:04:21+00:00, Biden's total dropped by -2577146.252
+AT 2020-11-09T20:25:39+00:00, Biden's total dropped by -8075.793000000063
