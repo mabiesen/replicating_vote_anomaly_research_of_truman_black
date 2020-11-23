@@ -1,0 +1,60 @@
+# FROM BASH, FROM ROOT REPO DIRECTORY, GET INTO IRB
+# mb@clm-mb: /replicating_results_of_truman_black irb
+# irb(main):001:0> require './matts_fraudcatch/united_states_edison_data.rb'
+# irb(main):002:0> us_edison_data = UnitedStatesEdisonData.new('./truman_black/truman_black_original_data/')
+# irb(main):004:0> us_edison_data.print_drop_totals_for_states
+#
+# EVERY SINGLE STATE SAW A DROP IN VOTE TOTALS
+# How does this happen?  those differentials are wild.
+
+State: TEXAS, TOTAL DROP: -11164893, Biden dropped more? false
+State: IDAHO, TOTAL DROP: -820319, Biden dropped more? false
+State: WESTVIRGINIA, TOTAL DROP: -858592, Biden dropped more? false
+State: NEBRASKA, TOTAL DROP: -880695, Biden dropped more? false
+State: MASSACHUSETTS, TOTAL DROP: -2410674, Biden dropped more? true
+State: ARIZONA, TOTAL DROP: -2639559, Biden dropped more? true
+State: GEORGIA, TOTAL DROP: -4753567, Biden dropped more? false
+State: WISCONSIN, TOTAL DROP: -3202289, Biden dropped more? true
+State: WYOMING, TOTAL DROP: -232266, Biden dropped more? false
+State: ALASKA, TOTAL DROP: -132475, Biden dropped more? false
+State: KANSAS, TOTAL DROP: -1265079, Biden dropped more? false
+State: MISSOURI, TOTAL DROP: -3031044, Biden dropped more? false
+State: MAINE, TOTAL DROP: -600862, Biden dropped more? true
+State: IOWA, TOTAL DROP: -1678116, Biden dropped more? false
+State: ARKANSAS, TOTAL DROP: -1218803, Biden dropped more? false
+State: MEXICO, TOTAL DROP: -917757, Biden dropped more? true
+State: COLORADO, TOTAL DROP: -2915895, Biden dropped more? true
+State: SOUTHCAROLINA, TOTAL DROP: -2148707, Biden dropped more? false
+State: ALABAMA, TOTAL DROP: -2230663, Biden dropped more? false
+State: HAWAII, TOTAL DROP: -541879, Biden dropped more? true
+State: SOUTHDAKOTA, TOTAL DROP: -381612, Biden dropped more? false
+State: VIRGINIA, TOTAL DROP: -4277530, Biden dropped more? true
+State: CALIFORNIA, TOTAL DROP: -11763167, Biden dropped more? true
+State: MARYLAND, TOTAL DROP: -2078419, Biden dropped more? true
+State: DISTRICTOFCOLUMBIA, TOTAL DROP: -31190, Biden dropped more? true
+State: PENNSYLVANIA, TOTAL DROP: -6265018, Biden dropped more? false
+State: CONNECTICUT, TOTAL DROP: -1585985, Biden dropped more? true
+State: WASHINGTON, TOTAL DROP: -3324337, Biden dropped more? true
+State: MICHIGAN, TOTAL DROP: -4387305, Biden dropped more? false
+State: KENTUCKY, TOTAL DROP: -2144962, Biden dropped more? false
+State: DELAWARE, TOTAL DROP: -502343, Biden dropped more? true
+State: INDIANA, TOTAL DROP: -2589777, Biden dropped more? false
+State: FLORIDA, TOTAL DROP: -11031896, Biden dropped more? false
+State: NORTHDAKOTA, TOTAL DROP: -354019, Biden dropped more? false
+State: OKLAHOMA, TOTAL DROP: -1558627, Biden dropped more? false
+State: VERMONT, TOTAL DROP: -346813, Biden dropped more? true
+State: NEWYORK, TOTAL DROP: -7705407, Biden dropped more? true
+State: RHODE, TOTAL DROP: -481708, Biden dropped more? true
+State: UTAH, TOTAL DROP: -1049752, Biden dropped more? false
+State: MINNESOTA, TOTAL DROP: -3378991, Biden dropped more? true
+State: NEWHAMP, TOTAL DROP: -606440, Biden dropped more? true
+State: MONTANA, TOTAL DROP: -516226, Biden dropped more? false
+State: TENN, TOTAL DROP: -3049471, Biden dropped more? false
+State: NORTHCAROLINA, TOTAL DROP: -5457383, Biden dropped more? false
+State: NEVADA, TOTAL DROP: -1095189, Biden dropped more? true
+State: MISSISSIPPI, TOTAL DROP: -876939, Biden dropped more? false
+State: JERSEY, TOTAL DROP: -2900922, Biden dropped more? true
+State: ILLINOIS, TOTAL DROP: -4550532, Biden dropped more? true
+State: OREGON, TOTAL DROP: -2152374, Biden dropped more? true
+State: LOUISIANA, TOTAL DROP: -2100291, Biden dropped more? false
+State: OHIO, TOTAL DROP: -5706753, Biden dropped more? false
