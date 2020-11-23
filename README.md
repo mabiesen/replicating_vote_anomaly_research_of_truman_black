@@ -19,6 +19,10 @@ Either the NYT/Edison data is flawed, or **a machine malfunction has occurred ac
 
 ## REPLICATING MY RESULTS
 
+I used Truman Blacks original data. You'll find Truman's original data in this repository, [HERE](https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black/tree/main/truman_black/truman_black_original_data)
+
+You can also download the rar file that Truman saved, the link is found on [this page](https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black/tree/main/truman_black)
+
 A few scripts have been created to assist with analysis
 *  [State Edison Data](https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black/blob/main/matts_fraudcatch/state_edison_data.rb) - This class helps to obtain and report data for an individual state
 *  [United States Edison Data](https://github.com/mabiesen/replicating_vote_anomaly_research_of_truman_black/blob/main/matts_fraudcatch/united_states_edison_data.rb) - This class is used to allow one to iterate over all states quickly
