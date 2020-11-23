@@ -58,5 +58,12 @@ class UnitedStatesEdisonData
       @all_states_edison_data.select{|state| !state.biden_drop_more_than_trump?}.each{|state| puts state.state_name}
     end
   end
+
+  def print_states_by_vote_drop_frequency
+    sorted = @all_states_edison_data.sort_by {|state| state.vote_drop_timeseries_data.count}
+    sorted.each do |state|
+      puts "State: #{state.state_name} Dropped Votes #{state.vote_drop_timeseries_data.count} times"
+    end
+  end
 end
 
