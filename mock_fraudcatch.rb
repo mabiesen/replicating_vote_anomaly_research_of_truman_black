@@ -100,12 +100,6 @@ class StateEdisonData
   end
 end
 
-#def convert_timestamp_to_datetime(timestamp)
-#  date_and_time = '%Y-%m-%dT%H:%M:%S'
-#  DateTime.strptime(timestamp ,date_and_time)
-#end
-
-
 puts "Please supply the filepath for the state you wish to examine"
 state_filepath = gets.chomp
 
@@ -113,29 +107,3 @@ state_filepath = gets.chomp
 sed = StateEdisonData.new(state_filepath) 
 sed.print_report
 
-# getting the data
-#json_data = sed.state_json_data(state_filepath)
-#timeseries_data = sed.time_series_data_from_json_data(json_data)
-
-# converting timestamps to insure proper sort
-#timeseries_data = timeseries_data.map do |tsdata|
-#                    tsdata['timestamp'] = convert_timestamp_to_datetime(tsdata['timestamp'])
-#                    tsdata
-#                  end
-
-# sort data by timestamp
-#timeseries_data = timeseries_data.sort_by do |tsdata|
-#                    tsdata['timestamp']
-#                  end
-
-#puts "Printing times where the total vote count dropped"
-#sed.print_times_where_total_vote_count_dropped(timeseries_data)
-
-#puts "Printing times where the lead switched"
-#sed.print_times_where_lead_switched(timeseries_data)
-
-#puts "Printing times where Trumps total dropped"
-#sed.print_times_where_candidates_personal_total_dropped(timeseries_data, 'Trump')
-
-#puts "Printing times where Bidens total dropped"
-#sed.print_times_where_candidates_personal_total_dropped(timeseries_data, 'Biden')
