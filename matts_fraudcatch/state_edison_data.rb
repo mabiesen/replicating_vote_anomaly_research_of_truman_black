@@ -58,21 +58,14 @@ class StateEdisonData
     @winner = last_entry['vote_shares']['trumpd'] > last_entry['vote_shares']['bidenj'] ? 'trump' : 'biden'
   end
 
+  # we are only looking at those instances where total amount dropped for now
+  # will need to account for poor percentage granularity
   def vote_drop_total_for_candidate(candidate)
-    candidate_key = candidate.downcase == 'trump' ? 'trumpd' : 'bidenj'
-    sum = 0
-    time_series_data.each_with_index do |tsdata, index|
-      next if index == 0
+    candidate_key = candidate.downcase == 'trump' ? 'trump_drop' : 'biden_drop'
 
-      last_tsdata  = time_series_data[index - 1]
-      last_total = last_tsdata['vote_shares'][candidate_key] * last_tsdata['votes']
-      current_total =  tsdata['vote_shares'][candidate_key] * tsdata['votes']
-
-      if last_total > current_total
-        sum += current_total - last_total
-      end
+    comparative_time_series.sum do |hsh|
+      hsh['amount_dropped'] < 0 ? hsh[candidate_key] : 0
     end
-    sum
   end
   
   def comparative_time_series
@@ -94,7 +87,7 @@ class StateEdisonData
       hsh['amount_dropped'] = amount_dropped
       hsh['previous_data'] = last_tsdata
       hsh['current_data'] = tsdata
-      hsh['trummp_drop'] = candidate_vote_drop_across_timeseries('trump', tsdata, last_tsdata)
+      hsh['trump_drop'] = candidate_vote_drop_across_timeseries('trump', tsdata, last_tsdata)
       hsh['biden_drop'] = candidate_vote_drop_across_timeseries('biden', tsdata, last_tsdata)
       ret_array.push(hsh)
     end
