@@ -57,16 +57,6 @@ class StateEdisonData
     last_entry = time_series_data.last
     @winner = last_entry['vote_shares']['trumpd'] > last_entry['vote_shares']['bidenj'] ? 'trump' : 'biden'
   end
-
-  # we are only looking at those instances where total amount dropped for now
-  # will need to account for poor percentage granularity
-  def vote_drop_total_for_candidate(candidate)
-    candidate_key = candidate.downcase == 'trump' ? 'trump_drop' : 'biden_drop'
-
-    comparative_time_series.sum do |hsh|
-      hsh['amount_dropped'] < 0 ? hsh[candidate_key] : 0
-    end
-  end
   
   def comparative_time_series
     ret_array = []
@@ -92,6 +82,15 @@ class StateEdisonData
       ret_array.push(hsh)
     end
     ret_array
+  end
+
+  # we are only looking at those instances where total amount dropped for now
+  # will need to account for poor percentage granularity
+  # will also need to look at those times that the total did not drop
+  def vote_drop_total_for_candidate(candidate)
+    candidate_key = candidate.downcase == 'trump' ? 'trump_drop' : 'biden_drop'
+
+    times_total_vote_count_dropped.sum{|hsh| hsh[candidate_key]}
   end
 
   def total_vote_count_drop
@@ -120,7 +119,7 @@ class StateEdisonData
 
   def print_times_where_total_vote_count_dropped
     puts PRINTING_SPACER
-    puts "PRINTING TIMES TOTAL COUNT DROPPED IN #{@state_name}\n\n"
+    puts "PRINTING TIMES TOTAL COUNT DROPPED IN #{@state_name}"
     puts PRINTING_SPACER
     data_array = comparative_time_series
     times_total_vote_count_dropped.each do |hsh|
@@ -139,7 +138,7 @@ class StateEdisonData
 
   def print_times_where_lead_switched
     puts PRINTING_SPACER
-    puts "PRINTING TIMES LEAD SWITCHED IN #{@state_name}\n\n"
+    puts "PRINTING TIMES LEAD SWITCHED IN #{@state_name}"
     puts PRINTING_SPACER
     data_array = comparative_time_series
     times_lead_switched.each do |hsh|
@@ -156,7 +155,7 @@ class StateEdisonData
 
   def print_times_where_candidate_total_dropped(candidate)
     puts PRINTING_SPACER
-    puts "PRINTING TIMES #{candidate}'s TOTAL DROPPED IN #{@state_name}\n\n"
+    puts "PRINTING TIMES #{candidate}'s TOTAL DROPPED IN #{@state_name}"
     puts PRINTING_SPACER
 
     total_drop = 0
@@ -167,10 +166,13 @@ class StateEdisonData
       last_tsdata  = hsh['previous_data']
       last_total = last_tsdata['vote_shares'][candidate_key] * last_tsdata['votes']
       current_total =  tsdata['vote_shares'][candidate_key] * tsdata['votes']
-
+      
+      lead_no_switch_statement = "The lead did not switch"
+      lead_switch_statement = "The lead switched in #{hsh['lead_switched']}'s favor"
       if last_total > current_total
         puts "AT #{tsdata['timestamp']}, #{candidate}'s total dropped by #{current_total - last_total}\n"\
-             "Total drop for timeframe was #{hsh['amount_dropped']}\n\n"
+             "Total drop for timeframe was #{hsh['amount_dropped']}\n"\
+             "#{hsh['lead_switched'].nil? ? lead_no_switch_statement : lead_switch_statement}\n\n"
         total_drop += current_total - last_total
       end
     end
