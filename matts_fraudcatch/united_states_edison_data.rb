@@ -113,7 +113,7 @@ class UnitedStatesEdisonData
     @all_states_edison_data.each do |state|
       next unless state.winner == 'biden'
 
-      did_winner_drop_more = state.winner == 'biden' ? state.biden_total_drop < state.trump_total_drop
+      did_winner_drop_more = state.biden_total_drop < state.trump_total_drop
       if did_winner_drop_more
         puts state.state_name
       end
