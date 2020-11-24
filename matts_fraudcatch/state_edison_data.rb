@@ -5,6 +5,9 @@ class StateEdisonData
   attr_reader :state_json_data, :state_name
   attr_reader :total_vote_count_drop, :biden_total_drop, :trump_total_drop
   attr_reader :winner
+  attr_reader :current_total_votes
+  attr_reader :current_percent_for_trump
+  attr_reader :current_percent_for_biden
 
   PRINTING_SPACER = '------------------------------------------'
   
@@ -56,6 +59,18 @@ class StateEdisonData
 
     last_entry = time_series_data.last
     @winner = last_entry['vote_shares']['trumpd'] > last_entry['vote_shares']['bidenj'] ? 'trump' : 'biden'
+  end
+
+  def current_total_votes
+    @current_total_votes || time_series_data.last['votes']
+  end
+
+  def current_percent_for_trump
+    @current_percent_for_trump ||= time_series_data.last['vote_share']['trumpd'] 
+  end
+
+  def current_percent_for_biden
+    @current_percent_for_biden ||= time_series_data.last['vote_share']['bidenj']
   end
   
   def comparative_time_series
