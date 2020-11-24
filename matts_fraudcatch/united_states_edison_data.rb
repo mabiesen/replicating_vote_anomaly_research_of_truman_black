@@ -35,11 +35,6 @@ class UnitedStatesEdisonData
     @all_states_edison_data.find {|state_data| state_data.state_name.downcase == state_name.downcase}
   end
 
-  def states_with_vote_total_drop
-    states = @all_states_edison_data.select {|state_data| state_data.total_vote_count_drop  < 0}
-    states.map{|state| state.state_name}
-  end
-
   def print_drop_totals_for_states
     @all_states_edison_data.each do |state|
       state.print_times_where_total_vote_count_dropped
