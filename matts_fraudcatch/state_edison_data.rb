@@ -37,12 +37,6 @@ class StateEdisonData
     false
   end
 
-  def biden_drop_more_than_trump?
-    return true if @biden_total_drop < @trump_total_drop
-
-    false
-  end
-
   def state_json_data(filepath)
     return @state_json_data unless @state_json_data.nil? 
 
