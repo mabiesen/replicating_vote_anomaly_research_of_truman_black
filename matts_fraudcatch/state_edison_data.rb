@@ -5,6 +5,8 @@ class StateEdisonData
   attr_reader :state_json_data, :state_name
   attr_reader :total_vote_count_drop, :biden_total_drop, :trump_total_drop
   attr_reader :winner
+
+  PRINTING_SPACER = '------------------------------------------'
   
   def initialize(filepath)
     @state_name = File.basename(filepath, '.*').upcase
@@ -138,55 +140,93 @@ class StateEdisonData
     print_times_where_candidate_total_dropped('Biden')
   end
 
-  def print_times_where_total_vote_count_dropped
+  def comparative_time_series
+    ret_array = []
     time_series_data.each_with_index do |tsdata, index|
       next if index == 0
 
+      hsh = {}
+      last_tsdata = time_series_data[index - 1]
+      trump_key = 'trumpd'
+      biden_key = 'bidenj'
+      current_lead = tsdata['vote_shares'][trump_key] > tsdata['vote_shares'][biden_key] ? 'Trump' : 'Biden'
+      last_lead = last_tsdata['vote_shares'][trump_key] > last_tsdata['vote_shares'][biden_key] ? 'Trump' : 'Biden'
       current_votes = tsdata['votes']
-      current_timestamp = tsdata['timestamp']
-      last_votes = time_series_data[index - 1]['votes']
-      last_timestamp = time_series_data[index - 1]['timestamp']
-      if tsdata['votes'] < time_series_data[index - 1]['votes']
-        puts "total count dropped by #{current_votes - last_votes} between #{last_timestamp} and #{current_timestamp}"
-      end
+      last_votes = last_tsdata['votes']
+      amount_dropped = (current_votes - last_votes) > 0 ? 0 : (current_votes - last_votes)
+
+      hsh['lead_switched'] = current_lead == last_lead ? nil : current_lead 
+      hsh['amount_dropped'] = amount_dropped
+      hsh['previous_data'] = last_tsdata
+      hsh['current_data'] = tsdata
+      ret_array.push(hsh)
     end
-    puts "TOTAL DROP WAS #{total_vote_count_drop}"
+    ret_array
+  end
+
+
+  def print_times_where_total_vote_count_dropped
+    puts PRINTING_SPACER
+    puts "PRINTING TIMES TOTAL COUNT DROPPED IN #{@state_name}\n\n"
+    puts PRINTING_SPACER
+    data_array = comparative_time_series
+    data_array.each do |hsh|
+      next if hsh['amount_dropped'] == 0
+
+      lead_no_switch_statement = "The lead did not switch"
+      lead_switch_statement = "The lead switched in #{hsh['lead_switched']}'s favor"
+      puts "total count dropped by #{hsh['amount_dropped']}\n"\
+           "between #{hsh['previous_data']['timestamp']} "\
+           "and #{hsh['current_data']['timestamp']}\n"\
+           "#{hsh['lead_switched'].nil? ? lead_no_switch_statement : lead_switch_statement}\n\n"
+           
+    end
+    puts "TOTAL DROP FOR STATE WAS #{data_array.sum{|hsh| hsh['amount_dropped']}}"
+    puts PRINTING_SPACER
     puts "\n\n"
   end
 
   def print_times_where_lead_switched
-    time_series_data.each_with_index do |tsdata, index|
-      next if index == 0
-      
-      trump_key = 'trumpd'
-      biden_key = 'bidenj'
-      current_lead = tsdata['vote_shares'][trump_key] > tsdata['vote_shares'][biden_key] ? 'Trump' : 'Biden' 
-      last_tsdata  = time_series_data[index - 1]
-      last_lead = last_tsdata['vote_shares'][trump_key] > last_tsdata['vote_shares'][biden_key] ? 'Trump' : 'Biden'
+    puts PRINTING_SPACER
+    puts "PRINTING TIMES LEAD SWITCHED IN #{@state_name}\n\n"
+    puts PRINTING_SPACER
+    data_array = comparative_time_series
+    data_array.each do |hsh|
+      next unless hsh['lead_switched']
 
-      if last_lead != current_lead
-        puts "Lead switched in #{current_lead}'s favor at #{tsdata['timestamp']}"
-      end
+      total_counts_dropped_statement = hsh['amount_dropped'].nil? ? 'did not drop' : "dropped by #{hsh['amount_dropped']}"
+      lead_switch_statement = "The lead switched in #{hsh['lead_switched']}'s favor"
+      puts "#{lead_switch_statement} at #{hsh['current_data']['timestamp']}\n"\
+           "Total vote counts #{total_counts_dropped_statement}\n\n"
+
     end
+    puts "TOTAL DROP FOR STATE WAS #{data_array.sum{|hsh| hsh['amount_dropped']}}"
+    puts PRINTING_SPACER
     puts "\n\n"
   end
 
   def print_times_where_candidate_total_dropped(candidate)
+    puts PRINTING_SPACER
+    puts "PRINTING TIMES #{candidate}'s TOTAL DROPPED IN #{@state_name}\n\n"
+    puts PRINTING_SPACER
+
     total_drop = 0
     candidate_key = candidate.downcase == 'trump' ? 'trumpd' : 'bidenj' 
 
-    time_series_data.each_with_index do |tsdata, index|
-      next if index == 0
-      last_tsdata  = time_series_data[index - 1]
+    comparative_time_series.each do |hsh|
+      tsdata = hsh['current_data']
+      last_tsdata  = hsh['previous_data']
       last_total = last_tsdata['vote_shares'][candidate_key] * last_tsdata['votes']
       current_total =  tsdata['vote_shares'][candidate_key] * tsdata['votes']
 
       if last_total > current_total
-        puts "AT #{tsdata['timestamp']}, #{candidate}'s total dropped by #{current_total - last_total}"
+        puts "AT #{tsdata['timestamp']}, #{candidate}'s total dropped by #{current_total - last_total}\n"\
+             "Total drop for timeframe was #{hsh['amount_dropped']}\n\n"
         total_drop += current_total - last_total
       end
     end
     puts "TOTAL DROP FOR #{candidate.upcase} was #{total_drop}"
+    puts PRINTING_SPACER
     puts "\n\n"
   end
 end
