@@ -58,24 +58,6 @@ class StateEdisonData
     @winner = last_entry['vote_shares']['trumpd'] > last_entry['vote_shares']['bidenj'] ? 'trump' : 'biden'
   end
 
-  def total_vote_count_drop
-    return @total_vote_count_drop unless @total_vote_count_drop.nil?
-
-    @total_vote_count_drop = 0
-    time_series_data.each_with_index do |tsdata, index|
-      next if index == 0
-
-      current_votes = tsdata['votes']
-      current_timestamp = tsdata['timestamp']
-      last_votes = time_series_data[index - 1]['votes']
-      last_timestamp = time_series_data[index - 1]['timestamp']
-      if tsdata['votes'] < time_series_data[index - 1]['votes']
-        @total_vote_count_drop += current_votes - last_votes
-      end
-    end
-    @total_vote_count_drop
-  end
-
   def vote_drop_total_for_candidate(candidate)
     candidate_key = candidate.downcase == 'trump' ? 'trumpd' : 'bidenj'
     sum = 0
@@ -117,6 +99,12 @@ class StateEdisonData
       ret_array.push(hsh)
     end
     ret_array
+  end
+
+  def total_vote_count_drop
+    return @total_vote_count_drop unless @total_vote_count_drop.nil?
+
+    comparative_time_series.sum{|hsh| hsh['amount_dropped']}
   end
 
   def times_total_vote_count_dropped
