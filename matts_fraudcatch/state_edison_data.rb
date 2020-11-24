@@ -47,20 +47,6 @@ class StateEdisonData
     @state_json_data = convert_time_series_timestamp_to_datetime(json_data)
   end
 
-  def convert_time_series_timestamp_to_datetime(json_data)
-    timeseries_data = json_data["data"]["races"][0]["timeseries"]
-    date_and_time = '%Y-%m-%dT%H:%M:%S'
-    new_timeseries = timeseries_data.map do |tsdata|
-                       tsdata['timestamp'] = DateTime.strptime(tsdata['timestamp'], date_and_time)
-                       tsdata
-                     end
-    new_timeseries = new_timeseries.sort_by do |tsdata|
-                       tsdata['timestamp']
-                     end
-    json_data["data"]["races"][0]["timeseries"] = new_timeseries
-    json_data
-  end
-
   def time_series_data
     @state_json_data["data"]["races"][0]["timeseries"]
   end
@@ -106,24 +92,7 @@ class StateEdisonData
     end
     sum
   end
-
-  def print_report()
-    puts "EVALUATING #{@state_name}"
-    puts ""
-
-    puts "Printing times where the lead switched"
-    print_times_where_lead_switched
-
-    puts "Printing times where the total vote count dropped"
-    print_times_where_total_vote_count_dropped
-
-    puts "Printing times where Trumps total dropped"
-    print_times_where_candidate_total_dropped('Trump')
-
-    puts "Printing times where Bidens total dropped"
-    print_times_where_candidate_total_dropped('Biden')
-  end
-
+  
   def comparative_time_series
     ret_array = []
     time_series_data.each_with_index do |tsdata, index|
@@ -143,20 +112,37 @@ class StateEdisonData
       hsh['amount_dropped'] = amount_dropped
       hsh['previous_data'] = last_tsdata
       hsh['current_data'] = tsdata
+      hsh['trummp_drop'] = candidate_vote_drop_across_timeseries('trump', tsdata, last_tsdata)
+      hsh['biden_drop'] = candidate_vote_drop_across_timeseries('biden', tsdata, last_tsdata)
       ret_array.push(hsh)
     end
     ret_array
   end
 
+  def times_total_vote_count_dropped
+    comparative_time_series.select{|hsh| hsh['amount_dropped'] != 0}
+  end
+
+  def times_lead_switched
+    comparative_time_series.select{|hsh| hsh['lead_switched'] != nil}
+  end
+
+  def print_report()
+    puts "EVALUATING #{@state_name}"
+    puts ""
+
+    print_times_where_lead_switched
+    print_times_where_total_vote_count_dropped
+    print_times_where_candidate_total_dropped('Trump')
+    print_times_where_candidate_total_dropped('Biden')
+  end
 
   def print_times_where_total_vote_count_dropped
     puts PRINTING_SPACER
     puts "PRINTING TIMES TOTAL COUNT DROPPED IN #{@state_name}\n\n"
     puts PRINTING_SPACER
     data_array = comparative_time_series
-    data_array.each do |hsh|
-      next if hsh['amount_dropped'] == 0
-
+    times_total_vote_count_dropped.each do |hsh|
       lead_no_switch_statement = "The lead did not switch"
       lead_switch_statement = "The lead switched in #{hsh['lead_switched']}'s favor"
       puts "total count dropped by #{hsh['amount_dropped']}\n"\
@@ -175,9 +161,7 @@ class StateEdisonData
     puts "PRINTING TIMES LEAD SWITCHED IN #{@state_name}\n\n"
     puts PRINTING_SPACER
     data_array = comparative_time_series
-    data_array.each do |hsh|
-      next unless hsh['lead_switched']
-
+    times_lead_switched.each do |hsh|
       total_counts_dropped_statement = hsh['amount_dropped'].nil? ? 'did not drop' : "dropped by #{hsh['amount_dropped']}"
       lead_switch_statement = "The lead switched in #{hsh['lead_switched']}'s favor"
       puts "#{lead_switch_statement} at #{hsh['current_data']['timestamp']}\n"\
@@ -213,4 +197,28 @@ class StateEdisonData
     puts PRINTING_SPACER
     puts "\n\n"
   end
+
+  private
+
+  def candidate_vote_drop_across_timeseries(candidate, current_tsdata, last_tsdata)
+    candidate_key = candidate.downcase == 'trump' ? 'trumpd' : 'bidenj'
+    last_total = last_tsdata['vote_shares'][candidate_key] * last_tsdata['votes']
+    current_total =  current_tsdata['vote_shares'][candidate_key] * current_tsdata['votes'] 
+    current_total - last_total
+  end
+
+  def convert_time_series_timestamp_to_datetime(json_data)
+    timeseries_data = json_data["data"]["races"][0]["timeseries"]
+    date_and_time = '%Y-%m-%dT%H:%M:%S'
+    new_timeseries = timeseries_data.map do |tsdata|
+                       tsdata['timestamp'] = DateTime.strptime(tsdata['timestamp'], date_and_time)
+                       tsdata
+                     end
+    new_timeseries = new_timeseries.sort_by do |tsdata|
+                       tsdata['timestamp']
+                     end
+    json_data["data"]["races"][0]["timeseries"] = new_timeseries
+    json_data
+  end
 end
+
