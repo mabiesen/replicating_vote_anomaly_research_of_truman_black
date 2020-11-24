@@ -56,13 +56,14 @@ class UnitedStatesEdisonData
   end
 
   def print_most_common_day_for_vote_drops_in_state
-    @all_states_edison_data.each do |state|
-      date_count = Hash.new(0)
-      dates = state.times_total_vote_count_dropped.map{|x| x['current_data']['timestamp'].to_date}
-      dates.each {|date| date_count[date] += 1}
-      most_common_date = date_count.sort_by { |date,number| number}.last[0]
-      puts "State #{state.state_name} most commonly dropped votes on #{most_common_date}"
-    end
+    temp_array = @all_states_edison_data.map do |state|
+                   date_count = Hash.new(0)
+                   dates = state.times_total_vote_count_dropped.map{|x| x['current_data']['timestamp'].to_date}
+                   dates.each {|date| date_count[date] += 1}
+                   most_common_date = date_count.sort_by { |date,number| number}.last[0]
+                   {name: state.state_name, date: most_common_date}
+                 end
+    temp_array.sort_by{|hsh| hsh[:date]}.each{|hsh| puts "#{hsh[:name]}: #{hsh[:date]}"}
   end
 
   def print_states_where_candiate_dropped_more(candidate)
